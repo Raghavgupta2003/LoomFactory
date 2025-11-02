@@ -88,13 +88,29 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Production settings
-import os
+# import os
 
+# DEBUG = False
+# ALLOWED_HOSTS = ['yourusername.pythonanywhere.com', 'localhost', '127.0.0.1']
+
+# # Static files configuration
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# # Media files configuration
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Debug should be False in production
 DEBUG = False
-ALLOWED_HOSTS = ['yourusername.pythonanywhere.com', 'localhost', '127.0.0.1']
 
-# Static files configuration
+# Add your PythonAnywhere domain to ALLOWED_HOSTS
+ALLOWED_HOSTS = [
+    'raghavguptadanta.pythonanywhere.com',
+    'localhost',
+    '127.0.0.1',
+]
+
+# Make sure these settings are correct
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
-# Media files configuration
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
