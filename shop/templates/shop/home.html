@@ -1,0 +1,127 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">From Our Looms to Your Rooms</h1>
+                <p class="lead mb-4">Discover the finest home textiles, crafted with traditional Indian craftsmanship and modern elegance.</p>
+                <a href="#categories" class="btn btn-primary btn-lg">Explore Collections</a>
+            </div>
+            <!-- <div class="col-lg-6">
+                <img src="https://via.placeholder.com/600x400" alt="Loom Factory" class="img-fluid rounded-3">
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">Our Story</h2>
+                <p class="lead">
+                    For generations, Indian artisans have perfected the art of textile weaving. At Loom Factory, 
+                    we bridge this rich heritage with contemporary design, bringing you home textiles that tell 
+                    a story in every thread.
+                </p>
+                <p>
+                    From the traditional handlooms of Varanasi to the modern powerlooms of Surat, we source 
+                    the finest fabrics to create products that transform your living spaces into havens of 
+                    comfort and style.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products Carousel -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Featured Products</h2>
+        <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for product in featured_products %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-md-6">
+                                        <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="{{ product.name }}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body d-flex flex-column h-100">
+                                            <h5 class="card-title">{{ product.name }}</h5>
+                                            <p class="card-text flex-grow-1">{{ product.description|truncatewords:30 }}</p>
+                                            <div class="product-price">₹{{ product.price }}</div>
+                                            <a href="{{ product.get_absolute_url }}" class="btn btn-primary mt-3">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Grid -->
+<section id="categories" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Shop by Category</h2>
+        <div class="row g-4">
+            {% for category in categories %}
+            <div class="col-md-4">
+                <div class="card category-card">
+                    <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.name }}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ category.name }}</h5>
+                        <a href="{{ category.get_absolute_url }}" class="btn btn-primary">View All</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Fabric & Weave Types -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="mb-4">Shop by Fabric</h4>
+                <div class="d-flex flex-wrap gap-2">
+                    {% for fabric in fabric_types %}
+                    <span class="badge bg-primary p-2">{{ fabric }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="mb-4">Shop by Weave</h4>
+                <div class="d-flex flex-wrap gap-2">
+                    {% for weave in weave_types %}
+                    <span class="badge bg-success p-2">{{ weave }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

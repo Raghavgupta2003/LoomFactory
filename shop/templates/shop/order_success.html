@@ -1,0 +1,49 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card">
+                <div class="card-body py-5">
+                    <i class="fas fa-check-circle text-success fa-5x mb-4"></i>
+                    <h2 class="mb-3">Order Placed Successfully!</h2>
+                    <p class="lead mb-4">Thank you for your order. We'll process it and contact you soon.</p>
+                    
+                    <div class="card bg-light mb-4">
+                        <div class="card-body">
+                            <h5>Order Details</h5>
+                            <p><strong>Order ID:</strong> #{{ order.id }}</p>
+                            <p><strong>Customer:</strong> {{ order.customer_name }}</p>
+                            <p><strong>Phone:</strong> {{ order.phone }}</p>
+                            <p><strong>Total Amount:</strong> ₹{{ order.total_price }}</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-muted mb-4">
+                        For any queries, call us at 
+                        <a href="tel:+918283857170" class="text-decoration-none">
+                            <strong>+91 8283857170</strong>
+                        </a>
+                        or 
+                        <a href="https://wa.me/918283857170" target="_blank" class="text-decoration-none">
+                            <strong>WhatsApp</strong>
+                        </a>
+                    </p>
+                    
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{% url 'home' %}" class="btn btn-primary">Continue Shopping</a>
+                        <a href="tel:+918283857170" class="btn btn-outline-primary">
+                            <i class="fas fa-phone me-2"></i>Call Support
+                        </a>
+                        <a href="https://wa.me/918283857170" target="_blank" class="btn btn-outline-success">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

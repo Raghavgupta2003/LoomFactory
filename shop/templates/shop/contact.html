@@ -1,0 +1,83 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-5">Contact Us</h1>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                            <h5>Call Us</h5>
+                            <a href="tel:+918283857170" class="btn btn-outline-primary mt-2">
+                                +91 8283857170
+                            </a>
+                            <small class="text-muted d-block mt-2">Mon-Sat, 9AM-6PM</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fab fa-whatsapp fa-2x text-success mb-3"></i>
+                            <h5>WhatsApp</h5>
+                            <a href="https://wa.me/918283857170" target="_blank" class="btn btn-outline-success mt-2">
+                                +91 8283857170
+                            </a>
+                            <small class="text-muted d-block mt-2">24/7 Support</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope fa-2x text-warning mb-3"></i>
+                            <h5>Email</h5>
+                            <a href="mailto:info@loomfactory.com" class="btn btn-outline-warning mt-2">
+                                info@loomfactory.com
+                            </a>
+                            <small class="text-muted d-block mt-2">We'll respond within 24 hours</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marker-alt fa-2x text-danger mb-3"></i>
+                            <h5>Location</h5>
+                            <p>Across India</p>
+                            <small class="text-muted d-block mt-2">Serving Pan-India</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Contact Section -->
+            <div class="card mt-4">
+                <div class="card-body text-center">
+                    <h4>Quick Connect</h4>
+                    <p class="mb-3">Get in touch with us instantly</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="tel:+918283857170" class="btn btn-primary">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                        <a href="https://wa.me/918283857170" target="_blank" class="btn btn-success">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                        </a>
+                        <a href="mailto:info@loomfactory.com" class="btn btn-warning">
+                            <i class="fas fa-envelope me-2"></i>Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
